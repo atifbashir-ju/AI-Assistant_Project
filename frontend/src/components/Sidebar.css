@@ -1,0 +1,353 @@
+.sidebar {
+  width: 260px;
+  min-width: 260px;
+  background: var(--bg-panel);
+  border-right: 1px solid var(--border-soft);
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar-header-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar-mark {
+  font-family: var(--font-mono);
+  color: var(--accent);
+  font-size: 14px;
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 6px 8px;
+  flex-shrink: 0;
+}
+
+.sidebar-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.sidebar-subtitle {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-tertiary);
+  text-transform: lowercase;
+}
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  width: 30px;
+  height: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-dim);
+}
+
+.sidebar-close {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.sidebar-scrim {
+  display: none;
+}
+
+.new-session-btn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  padding: 10px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.new-session-btn:hover {
+  border-color: var(--accent-dim);
+  background: var(--bg-panel-raised);
+}
+
+.sidebar-section-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 10px;
+}
+
+.history-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 7px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+
+.history-item:hover {
+  background: var(--bg-panel-raised);
+  color: var(--text-primary);
+}
+
+.history-item--active {
+  background: var(--bg-panel-raised);
+  color: var(--text-primary);
+  border-left: 2px solid var(--accent);
+}
+
+.history-item-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.history-item-delete {
+  background: transparent;
+  border: none;
+  color: var(--text-tertiary);
+  font-size: 14px;
+  cursor: pointer;
+  opacity: 0;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.history-item:hover .history-item-delete {
+  opacity: 1;
+}
+
+.history-item-delete:hover {
+  color: var(--danger);
+}
+
+.session-id {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tool-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 2px;
+  font-size: 13px;
+}
+
+.tool-row--disabled {
+  color: var(--text-tertiary);
+}
+
+.tool-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  flex-shrink: 0;
+}
+
+.tool-dot--off {
+  background: var(--border);
+}
+
+.tool-dot--active {
+  background: var(--accent-amber);
+  box-shadow: 0 0 0 3px var(--accent-amber-dim);
+  animation: pulse 1.1s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.55; }
+}
+
+.tool-label {
+  flex: 1;
+}
+
+.tool-note {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-tertiary);
+}
+
+.upload-btn {
+  width: 100%;
+  background: transparent;
+  border: 1px dashed var(--border);
+  color: var(--text-secondary);
+  border-radius: var(--radius-md);
+  padding: 8px 10px;
+  font-size: 12.5px;
+  cursor: pointer;
+  text-align: left;
+  margin-bottom: 8px;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.upload-btn:hover:not(:disabled) {
+  border-color: var(--accent-dim);
+  color: var(--text-primary);
+}
+
+.upload-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.upload-status {
+  font-size: 11px;
+  border-radius: var(--radius-sm);
+  padding: 6px 8px;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+
+.upload-status--success {
+  background: rgba(79, 209, 174, 0.1);
+  color: var(--accent);
+}
+
+.upload-status--error {
+  background: rgba(232, 116, 106, 0.1);
+  color: var(--danger);
+}
+
+.doc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.doc-list li {
+  font-size: 12px;
+  color: var(--text-secondary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.doc-chunks {
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+  font-size: 10px;
+}
+
+.doc-empty {
+  font-size: 12px;
+  color: var(--text-tertiary);
+}
+
+.doc-hint {
+  margin-top: 8px;
+  font-size: 10.5px;
+  color: var(--text-tertiary);
+  line-height: 1.5;
+}
+
+.doc-hint code {
+  font-family: var(--font-mono);
+  background: var(--bg-panel-raised);
+  padding: 1px 4px;
+  border-radius: 4px;
+  color: var(--text-secondary);
+}
+
+.sidebar-footer {
+  margin-top: auto;
+  font-size: 11px;
+  color: var(--text-tertiary);
+  line-height: 1.5;
+}
+
+.sidebar-footer code {
+  font-family: var(--font-mono);
+  background: var(--bg-panel-raised);
+  padding: 1px 4px;
+  border-radius: 4px;
+  color: var(--text-secondary);
+}
+
+/* ---- Mobile: sidebar becomes a slide-out drawer ---- */
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 50;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease;
+    box-shadow: 2px 0 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .sidebar--open {
+    transform: translateX(0);
+  }
+
+  .sidebar-close {
+    display: block;
+  }
+
+  .sidebar-scrim {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 40;
+  }
+}

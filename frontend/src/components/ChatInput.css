@@ -1,0 +1,138 @@
+.chat-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 720px;
+  width: 100%;
+}
+
+.chat-input {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  background: var(--bg-panel-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 8px 8px 8px 10px;
+  width: 100%;
+  transition: border-color 0.15s ease;
+}
+
+.chat-input:focus-within {
+  border-color: var(--accent-dim);
+}
+
+.chat-input textarea {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  resize: none;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.5;
+  max-height: 160px;
+  padding: 8px 4px;
+  overflow-y: auto;
+}
+
+.chat-input textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.icon-btn:hover:not(:disabled) {
+  background: var(--bg-panel);
+  color: var(--text-primary);
+}
+
+.icon-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.icon-btn--active {
+  color: var(--danger);
+  animation: mic-pulse 1s ease-in-out infinite;
+}
+
+@keyframes mic-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.send-btn {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: var(--radius-md);
+  width: 34px;
+  height: 34px;
+  font-size: 16px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
+
+.send-btn:disabled {
+  background: var(--border);
+  color: var(--text-tertiary);
+  cursor: not-allowed;
+}
+
+.send-btn:not(:disabled):hover {
+  opacity: 0.9;
+}
+
+.send-btn:not(:disabled):active {
+  transform: scale(0.94);
+}
+
+.send-btn--stop {
+  background: var(--danger);
+  color: #1a1414;
+}
+
+.send-btn--stop:hover {
+  opacity: 0.9;
+}
+
+.image-preview {
+  position: relative;
+  width: fit-content;
+}
+
+.image-preview img {
+  height: 64px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.image-preview-remove {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: var(--danger);
+  color: #1a1414;
+  border: 2px solid var(--bg);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 1;
+  cursor: pointer;
+}

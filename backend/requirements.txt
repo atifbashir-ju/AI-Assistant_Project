@@ -1,0 +1,23 @@
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+pydantic>=2.7.0
+pydantic-settings>=2.3.0
+
+langgraph>=0.2.0
+langchain-core>=0.3.0
+langchain-google-genai>=2.0.0
+
+python-dotenv>=1.0.1
+
+# Optional: used by the built-in web_search tool (only needed if
+# ENABLE_WEB_SEARCH_TOOL=true). Safe to leave installed either way.
+ddgs>=1.0.0
+
+# Optional: only needed if you switch CHECKPOINTER_BACKEND to "sqlite".
+# langgraph-checkpoint-sqlite>=2.0.0
+
+# Used by the document upload endpoint (RAG). Needed for chunking text and
+# reading .pdf files.
+langchain-text-splitters>=0.3.0
+pypdf>=4.3.0
+python-multipart>=0.0.9
